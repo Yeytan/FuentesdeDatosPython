@@ -109,12 +109,13 @@ class Formulario:
               estudiarg = self.estudiante.get()
               empleadog = self.empleado.get()
               desempleadog = self.desempleado.get()
+              estadog =self.estado.get
 
               with open("DatosFormulario.csv", "a", newline="") as file:
                     formu = csv.writer(file)
                     if file.tell() == 0:
-                          formu.writerow(["Nombre", "A.Paterno", "A.Materno", "Correo", "Movil", "Leer", "Musica", "Videojuegos", "Estado", "Ocupacion"])
-                    formu.writerow([nombreg,paternog,maternog, correog, movilg,leerg,musicag,videojuegosg,estudiarg,empleadog,desempleadog])
+                          formu.writerow(["Nombre", "A.Paterno", "A.Materno", "Correo", "Movil", "Leer", "Musica", "Videojuegos", "Estudiante","Empleado", "Desempleado", "Estado"])
+                    formu.writerow([nombreg,paternog,maternog, correog, movilg,leerg,musicag,videojuegosg,estudiarg,empleadog,desempleadog,estadog])
 
                     self.nombreEntry.delete(0,"end")
                     self.paternoEntry.delete(0,"end")
@@ -174,6 +175,7 @@ class Formulario:
                                 frame10 = ttk.Label(newframe1, text=row[9], width=20, borderwidth=1, relief="raised")
                                 frame10.grid(row=row_numero, column=9)
 
+
                                 row_numero += 1
 
     def boton_bd (self):
@@ -215,9 +217,5 @@ class Formulario:
 
 Formulario()
 
-
-
-
-            
 
 
